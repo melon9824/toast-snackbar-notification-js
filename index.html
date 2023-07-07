@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="this project has created for learning purpose">
+    <title>toast-snackbar-notification-js</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/b766a53cfd.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header class="container">
+        <!-- nav -->
+        <nav class="nav flex">
+            <!-- logo -->
+            <div class="logo flex">
+                <img src="img/logo-main.png" alt="logo image">
+                <h2>agile<span>Point</span>.</h2>
+            </div>
+
+            <!-- nav button -->
+            <button type="button" class="nav-btn btn">Inspire me</button>
+        </nav>
+
+        <!-- hero -->
+        <div class="wrapper">
+            <!-- title -->
+           <h3 class="title">Toast or snackbar notification</h3>
+   
+           <!-- buttons -->
+           <div class="buttons">
+               <button onclick="showToast(successMsg)" class="hero-btn btn">Success</button>
+               <button onclick="showToast(errorMsg)" class="hero-btn btn">Error</button>
+               <button onclick="showToast(invalidMsg)" class="hero-btn btn">Invalid</button>
+           </div>
+   
+           <!-- toast box -->
+           <div id="toastBox"></div>
+       </div>
+    </header>
+
+
+
+    <!-- footer -->
+    <footer>
+        <p>&copy; <a href="#"><b>agile</b>Point.</a>&bullet; July 07, 2023</p>
+        <p><a href="#">Khorshed Alam</a></p>
+    </footer>
+
+
+    <!-- js -->
+    <script src="main.js"></script>
+</body>
+</html>

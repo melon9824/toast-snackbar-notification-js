@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #d1f5d1;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, 
+                                #222222b2 0%, 
+                                #6b0505ef -50%, 
+                                #2e2d2dde 45%), 
+                                url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/*=== nav ===*/
+.nav {
+    padding: 0.5rem 6%;
+    justify-content: space-between;
+}
+
+/* logo */
+.logo {
+    justify-content: start;
+    column-gap: 0.25rem;
+}
+
+.logo img {
+    width: 2.5rem;
+}
+
+.logo h2 {
+    color: #37D0EE;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #ffa500;
+    font-weight: 400;
+}
+
+/* button */
+.btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000 0%, #ffa500 100%);
+    transition: background 0.4s;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #ffa500 0%, #ff0000 100%);
+}
+
+
+/* title */
+.title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 3rem 8% 1rem;
+    text-decoration: 3px underline #c4c4c4;
+    text-underline-offset: 0.25rem;
+    
+    background: linear-gradient(45deg, #f3f351, #ff0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* buttons */
+.buttons {
+    margin: 0 8%;
+}
+
+.hero-btn {
+    letter-spacing: 1px;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+/* toast box */
+#toastBox {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1.25rem;
+}
+
+.toast {
+    width: 20rem;
+    height: 3rem;
+    background: #f1f1f1;
+    font-weight: 500;
+    margin: .75rem 0;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    padding-left: 2.5rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, 
+                rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveLeft 1s linear forwards;
+}
+
+@keyframes moveLeft {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.toast i {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.toast.success,
+.toast.success i {
+    color: #008000;
+}
+
+.toast.error,
+.toast.error i {
+    color: #ff0000;
+}
+
+.toast.invalid,
+.toast.invalid i {
+    color: #ffa500;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    animation: animation 5s linear forwards;
+}
+
+.toast.success::after {
+    background: #008000;
+}
+
+.toast.error::after {
+    background: #ff0000;
+}
+
+.toast.invalid::after {
+    background: #ffa500;
+}
+
+@keyframes animation {
+    100% {
+        width: 0;
+    }
+}
+
+
+/* footer */
+footer {
+    border-top: 1px solid #ffffff17;
+    padding: .5rem 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer p {
+    padding: 0.1rem;
+    font-size: 0.75rem;
+    color: #f3f3f3;
+}
+
+footer p a {
+    color: #b3afaf;
+    text-decoration: underline;
+    text-underline-offset: .2rem;
+    transition: all 0.4s;
+}
+
+footer p a:hover {
+    text-decoration: none;
+    color: #ffa500;
+}
+
+
+/* responsive design */
+@media screen and (max-width: 400px) {
+    .container {
+        background-size: cover;
+    }
+
+    .nav {
+        padding: 0.5rem 3%;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        column-gap: 0.25rem;
+    }
+    
+    .logo img {
+        width: 1.75rem;
+    }
+    
+    .logo h2 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.25rem;
+    }
+
+    .title {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero-btn {
+        padding: .5rem .75rem;
+    }
+
+    #toastBox {
+        right: 0;
+        bottom: 1.25rem;
+    }
+
+    .toast {
+        width: 15rem;
+        font-size: 0.8rem;
+    }
+
+    footer p {
+        font-size: .5rem;
+    }
+}
